@@ -17,6 +17,8 @@
                             dolore quaerat dolorem unde at id. Fugit amet numquam deserunt quod ea quisquam aliquam vero
                             perspiciatis magni, ipsum accusamus totam!
                         </p>
+
+                        @livewire('search')
                     </div>
                 </div>
             </div>
