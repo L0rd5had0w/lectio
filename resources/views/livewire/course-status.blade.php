@@ -21,7 +21,7 @@
                 @else
                     <i class="text-md text-2xl font-bold fas fa-toggle-off text-2x1 text-gray-900"></i>
                 @endif
-                <p class="text-md font-bold ml-2 text-gray-200">Marcar esta unidad como culminada</p>
+                <p class="text-md font-bold ml-2 text-gray-200">Marcar esta lección como culminada</p>
             </div>
 
             <div class="card mt-2">
@@ -42,6 +42,51 @@
                 @livewire('lesson-assignament',['lesson' => $current], key($current->id))
             </div>
 
+            <div class="mt-4 text-2xl text-gray-300 font-bold">
+                Otras lecciones de esta unidad
+            </div>
+
+            <section class="container p-5 place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                @foreach ($course->sections as $key=>$sectionKey)
+                    @if ($sectionKey->id == $current->section_id)
+                        @foreach ($lessons as $key=>$item)
+                            @if ($item->section_id == $sectionKey->id && $item->id != $current->id)
+                                <div class="bg-gray-900 shadow-lg rounded p-3 h-full w-full my-4">
+                                    <div class="group relative">
+                                        <img class="w-full md:w-90 block rounded" src="{{Storage::url($course->image->url)}}" />
+                                        <div
+                                            class="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly ">
+                        
+                                            <a wire:click='changeLesson({{$item}})'
+                                                class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition cursor-pointer">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="p-5 mt-auto">
+                                        <h3 class="text-white text-lg ">Lección:{{$key+1}}: {{$item->name}}</h3>
+                                        <p class="text-gray-400">{{$item->description}}</p>
+                        
+                                        @foreach ($tasks as $e)
+                                            @if ($e->lesson->id == $item->id && $e->user->id == auth()->user()->id)
+                                                @if ($e->status == 1)
+                                                    <span class="bg-yellow-300"> Pendiente de calificar </span>
+                                                @else
+                                                    <span class="bg-green-300"> Calificacion: {{$e->score}} </span>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div> 
+                            @endif
+                        @endforeach
+                    @endif
+                @endforeach
+            </section>
         </div>
 
         <div class="card">
@@ -122,49 +167,6 @@
                 </ul>
 
             </div>
-
-            {{-- <div>
-                @livewire('lesson-assignament',['lesson' => $current], key($current->id))
-            </div> --}}
-
-            
         </div>
     </div>
-
-    {{-- <section class="container p-5 place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        @foreach ($lessons as $key=>$item)
-        <div class="bg-gray-900 shadow-lg rounded p-3 h-full w-full my-4">
-            <div class="group relative">
-                <img class="w-full md:w-90 block rounded" src="{{Storage::url($course->image->url)}}" />
-                <div
-                    class="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly ">
-
-                    <a wire:click='changeLesson({{$item}})'
-                        class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="p-5 mt-auto">
-                <h3 class="text-white text-lg ">Lección:{{$key+1}}: {{$item->name}}</h3>
-                <p class="text-gray-400">{{$item->description}}</p>
-
-                @foreach ($tasks as $e)
-                @if ($e->lesson->id == $item->id && $e->user->id == auth()->user()->id)
-                @if ($e->status == 1)
-                <span class="bg-yellow-300"> Pendiente de calificar </span>
-                @else
-                <span class="bg-green-300"> Calificacion: {{$e->score}} </span>
-                @endif
-                @endif
-                @endforeach
-            </div>
-        </div>
-        @endforeach
-    </section> --}}
-
 </div>

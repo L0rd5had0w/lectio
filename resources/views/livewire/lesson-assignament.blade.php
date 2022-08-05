@@ -4,7 +4,7 @@
         <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg">
             <div class="md:flex">
                 <div class="w-full">
-                    <div class="p-4 border-b-2"> <span class="text-lg font-bold text-gray-600">Agregar tarea</span>
+                    <div class="p-4 border-b-2"> <span class="text-lg font-bold text-gray-600">Agregar tarea para esta lección</span>
                     </div>
                     <div class="p-3">
                         <div class="mb-2"> <span class="text-sm">Titulo</span> <input type="text"
