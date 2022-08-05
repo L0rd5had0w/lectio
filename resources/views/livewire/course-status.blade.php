@@ -70,16 +70,6 @@
                                     <div class="p-5 mt-auto">
                                         <h3 class="text-white text-lg ">Lección:{{$key+1}}: {{$item->name}}</h3>
                                         <p class="text-gray-400">{{$item->description}}</p>
-                        
-                                        @foreach ($tasks as $e)
-                                            @if ($e->lesson->id == $item->id && $e->user->id == auth()->user()->id)
-                                                @if ($e->status == 1)
-                                                    <span class="bg-yellow-300"> Pendiente de calificar </span>
-                                                @else
-                                                    <span class="bg-green-300"> Calificacion: {{$e->score}} </span>
-                                                @endif
-                                            @endif
-                                        @endforeach
                                     </div>
                                 </div> 
                             @endif
