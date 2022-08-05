@@ -1,16 +1,16 @@
-<div class="mt-24">
-    <div class="bg-gray-300 container grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">
+<div class="mt-24 bg-gray-500">
+    <div class="container grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">
         <div class="lg:col-span-2">
             <div class="embed-responsive">
                 {!!$current->iframe!!}
             </div>
 
-            <h1 class="text-3xl text-gray-600 font-bold">
+            <h1 class="text-3xl text-gray-300 font-bold">
                 {!!$current->name!!}
             </h1>
 
             @if($current->description)
-                <div class="text-gray-600">
+                <div class="text-gray-200">
                     {{$current->description}}
                 </div>
             @endif
@@ -19,9 +19,9 @@
                 @if($current->completed)
                     <i class="fas fa-toggle-on text-2xl text-blue-600"></i>
                 @else
-                    <i class="fas fa-toggle-off text-2xl text-gray-600"></i>
+                    <i class="fas fa-toggle-off text-2xl text-gray-900"></i>
                 @endif
-                <p class="text-sm ml-2">Marcar esta unidad como culminada</p>
+                <p class="text-sm ml-2 text-gray-200 font-bold">Marcar esta unidad como culminada</p>
             </div>
 
             <div class="card mt-2">
