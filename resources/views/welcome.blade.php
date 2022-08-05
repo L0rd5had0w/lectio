@@ -2,7 +2,7 @@
     @section('header')
     <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
         <div class="absolute top-0 w-full h-full bg-center bg-cover"
-            style='background-image: url("/img/lectio.jpg");'>
+            style='background-image: url("/img/lectiowp.png");'>
             <span id="blackOverlay" class="w-full h-full absolute "></span>
         </div>
         <div class="container relative mx-auto">
@@ -97,7 +97,7 @@
                 <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
                     <div
                         class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-pink-600">
-                        <img alt="..." src="{{ asset('img/nailspot.jpg') }}" class="w-full align-middle rounded-t-lg" />
+                        <img alt="..." src="{{ asset('img/lectioqe.png') }}" class="w-full align-middle rounded-t-lg" />
                         <blockquote class="relative p-8 mb-4">
                             <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
                                 class="absolute left-0 w-full block" style="height: 95px; top: -94px">

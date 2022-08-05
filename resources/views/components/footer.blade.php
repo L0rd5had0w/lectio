@@ -82,7 +82,7 @@
             <div class="w-full md:w-4/12 px-4 mx-auto text-center">
                 <div class="text-sm text-gray-600 font-semibold py-1">
                     Copyright © 2021 Lectio by
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Digital Pinneaple</a>.
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Victor Blanco</a>.
                 </div>
             </div>
         </div>
