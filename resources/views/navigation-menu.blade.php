@@ -14,17 +14,12 @@ $nav_links =[
 'name' => 'Competencias',
 'route' => route('competences.index'),
 'active' => request()->routeIs('competence*')
-],
-[
-'name' => 'Blog',
-'route' => route('competences.index'),
-'active' => request()->routeIs('blog*')
 ]
 ];
 @endphp
 
 <nav x-data="{ open: false }"
-    class="top-0 absolute z-50 w-full items-center justify-between px-2 py-3 navbar-expand-lg">
+    class="top-0 fixed bg-gray-800 z-50 w-full bg-teal-500 items-center justify-between px-5 py-2">
     <div class="container">
         <div class="flex justify-between h-16">
             <div class="flex">
