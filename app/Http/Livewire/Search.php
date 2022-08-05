@@ -7,7 +7,7 @@ use App\Models\Course;
 
 class Search extends Component
 {
-    public $search ;
+    public $search;
 
     public function render()
     {

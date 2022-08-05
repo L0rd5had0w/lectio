@@ -11,9 +11,8 @@
                     <div class="w-full md:w-3/4 lg:w-1/2">
                         <h1 class="text-white font-bold text-4xl">Academia Web, Tu mejor Aliado en Capacitación</h1>
                         <p class="text-white text-lg mt-2 mb-4">Capacitate en diferentes cursos de diseño web, desarrollo de videojuegos, diseño multimedia, diseño gráfico y logra avanzar en tu vida profesional</p>
-                        <!-- component -->
-                        <!-- This is an example component -->
-                    
+
+                        @livewire('search');
                     </div>
                 </div>
             </div>
