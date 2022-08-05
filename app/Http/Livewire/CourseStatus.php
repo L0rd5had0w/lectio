@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Course;
 use App\Models\Lesson;
 use Livewire\Component;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class CourseStatus extends Component
 {
@@ -82,6 +82,7 @@ class CourseStatus extends Component
                 $i++;
             }
         }
+        
         $advance = ($i * 100)/($this->course->lessons->count());
         return round($advance, 2);
  
