@@ -6,7 +6,7 @@
             <ul class="absolute z-50 left-0 w-full bg-white mt-1 rounded-lg overflow-hidden">
                 @forelse($this->results as $result)
                  <li class="leading-10 px-5 text-sm cursor-pointer hover:bg-gray-300 ">
-                     <a href="{{route('course.status',$result)}}">{{$result->name}}</a>
+                     <a href="{{route('course.show',$result)}}">{{$result->name}}</a>
                  </li>
                 @empty
                     <li class="leading-10 px-5 text-sm cursor-pointer hover:bg-gray-300 ">
