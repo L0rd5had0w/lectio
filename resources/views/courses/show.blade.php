@@ -1,12 +1,12 @@
 <x-app-layout>
 
     @section('header')
-    <div class=" w-full lg:max-w-full lg:flex pt-20 p-2 bg-gray-300 relative">
+    <div class="top-0 w-full lg:max-w-full lg:flex pt-20 p-2 bg-gray-300 relative">
         <div class="flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden bg-center">
             {!!$course->iframe!!}
         </div>
         <div
-            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-gray-700 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-full text-white">
+            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-gray-700 rounded-b lg:rounded-b-none lg:rounded-r p-2 flex flex-col justify-between leading-normal w-full text-white">
             <div class="mb-8">
                 <h1 class="text-4xl">{{$course->name}}</h1>
                 <h2 class="text-xl mb-3">{{$course->description}}</h2>
@@ -68,7 +68,7 @@
                             en este curso...</h1>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 ">
                             @foreach ($course->goals as $goal)
-                            <li class="text-gray-700 text-base"> - {{$goal->name}}</li>
+                            <li class="text-gray-700 text-base"> <i class="fas fa-check text-gray-600 mr-2"></i> {{$goal->name}}</li>
                             @endforeach
                         </ul>
                     </div>
@@ -79,12 +79,11 @@
                         <h1 href="#" class="text-2xl text-gray-700 font-bold mb-3">Lecciones</h1>
                         <ul>
                             @foreach ($course->lessons as $lesson)
-                            <li class="text-gray-700 text-base"> - {{$lesson->name}}</li>
+                            <li class="text-gray-700 text-base"> <i class="fas fa-play-circle mr-2 text-blue-600"></i> {{$lesson->name}}</li>
                             @endforeach
                         </ul>
                     </div>
                 </section>
-
 
                 <section class="mb-12">
                     <h1 class="font-bold text-3xl">Requisitos</h1>
@@ -113,7 +112,8 @@
                             <img src="{{$course->teacher->profile_photo_url}}" alt="avatar"
                                 class="w-12 h-12 object-cover rounded-full shadow-lg mx-4">
                             <div>
-                                <h1 class="font-bold mx-1 hover:underline">{{$course->teacher->name}}</h1>
+                                <h1 class="font-bold mx-1">{{$course->teacher->name}} - <a class="text-blue-400 text-sm font-bold" href="">{{'@' . Str::slug($course->teacher->name, '')}}</a></h1>
+                                
                                 <span class="text-sm font-light">Publicado
                                     {{$course->created_at->format('d-m-Y')}}</span>
                             </div>

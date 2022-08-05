@@ -1,34 +1,64 @@
-<div class="mt-8">
-    <div class="container grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="mt-24">
+    <div class="bg-gray-300 container grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">
         <div class="lg:col-span-2">
             <div class="embed-responsive">
                 {!!$current->iframe!!}
             </div>
-            <h1 class="text-3xl text-gray-600 font-bold mt-4">
+
+            <h1 class="text-3xl text-gray-600 font-bold">
                 {!!$current->name!!}
             </h1>
-            <div class="card">
+
+            @if($current->description)
+                <div class="text-gray-600">
+                    {{$current->description}}
+                </div>
+            @endif
+
+            <div class="flex items-center mt-4 cursor-pointer" wire:click="completed">
+                @if($current->completed)
+                    <i class="fas fa-toggle-on text-2xl text-blue-600"></i>
+                @else
+                    <i class="fas fa-toggle-off text-2xl text-gray-600"></i>
+                @endif
+                <p class="text-sm ml-2">Marcar esta unidad como culminada</p>
+            </div>
+
+            <div class="card mt-2">
                 <div class="card-body flex text-gray-500 font-bold">
-
-                    @if ($this->previous!==null)
-                    <a class="cursor-pointer" wire:click="changeLesson({{$this->previous}})">Lección Anterior</a>
+                    @if($this->previous)
+                        <a wire:click="changeLesson({{$this->previous}})" class="cursor-pointer"> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                            Tema Anterior</a>
+                    @endif
+                    @if($this->next)
+                        <a wire:click="changeLesson({{$this->next}})" class="ml-auto cursor-pointer " >Siguiente tema <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                        </a>
                     @endif
 
-                    @if ($this->next)
-                    <a wire:click="changeLesson({{$this->next}})" class="cursor-pointer ml-auto">Siguiente Lección </a>
-                    @endif
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h1>{{$course->name}}</h1>
-                <div class="flex items-center mb-2">
-                    <img class="h-8 w-8 object-cover rounded-full shadow-lg"
-                        src="{{$course->teacher->profile_photo_url}}" alt="">
-                    <p class="text-gray-700 text-sm ml-2">{{$course->teacher->name}}</p>
+                <h1 class="text-2xl leading-8 text-center mb-4 mt-20">{{$course->name}}</h1>
+                <div class="flex items-center">
+                    <figure>
+                        <img class="w-12 h-12 object-cover rounded-full mr-4" src="{{$course->teacher->profile_photo_url}}" alt="">
+                    </figure>
+                    <div>
+                        <p>{{$course->teacher->name}}</p>
+                        <a class="text-blue-500 text-sm" href="">{{'@' . Str::slug($course->teacher->name,'')}}</a>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 text-sm mt-2">{{$this->advance . '%'}} completado</p>
+                <div class="relative pt-1">
+                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+                        <div style="width:{{$this->advance . '%'}}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
+                    </div>
                 </div>
             </div>
+
             <div>
                 @livewire('lesson-assignament',['lesson' => $current], key($current->id))
             </div>
@@ -42,14 +72,6 @@
                 <img class="w-full md:w-90 block rounded" src="{{Storage::url($course->image->url)}}" />
                 <div
                     class="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly ">
-                    {{-- <button
-                        class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-heart" viewBox="0 0 16 16">
-                            <path
-                                d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-                        </svg>
-                    </button> --}}
 
                     <a wire:click='changeLesson({{$item}})'
                         class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition cursor-pointer">

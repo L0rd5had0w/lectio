@@ -1,9 +1,9 @@
 <div class="card">
     @if ($task)
     @if($task->status == 1)
-    <span class="bg-yellow-200">Por calificar</span>
+    <span class="bg-yellow-200"> Por calificar</span>
     @else
-    <span class="bg-green-200">Calificada</span>
+    <span class="bg-green-200"> Calificada</span>
     @endif
     @else
     <form wire:submit.prevent='save'>

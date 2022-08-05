@@ -1,7 +1,7 @@
 <x-app-layout>
     @section('header')
     <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
-        <div class="absolute top-0 w-full h-full bg-center bg-cover"
+        <div class="absolute top-auto w-full h-full bg-center bg-cover"
             style='background-image: url("/img/lectiowp.png");'>
             <span id="blackOverlay" class="w-full h-full absolute "></span>
         </div>
