@@ -51,17 +51,75 @@
                     </div>
                 </div>
 
-                <p class="text-gray-600 text-sm mt-2">{{$this->advance . '%'}} completado</p>
-                <div class="relative pt-1">
-                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                        <div style="width:{{$this->advance . '%'}}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
+                @if($current->tasks->count() > 0)
+                    @if($current->tasks()->whereLessonId($current->id)->first()->status == 1)
+                        <p class="text-gray-600 text-sm mt-2">{{($this->advance == 100?80:$this->advance) . '%'}} completado</p>
+                        <div class="relative pt-1">
+                            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+                                <div style="width:{{$this->advance . '%'}}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
+                            </div>
+                        </div>
+                        <span class="bg-yellow-200"> Tarea pendiente de calificar</span>
+                    @else
+                        <p class="text-gray-600 text-sm mt-2">100% completado</p>
+                        <div class="relative pt-1">
+                            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+                                <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
+                            </div>
+                        </div>
+                        <span class="bg-green-200"> Tarea Calificada</span>
+                    @endif
+                @else
+                    <p class="text-gray-600 text-sm mt-2">{{$this->advance . '%'}} completado</p>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+                            <div style="width:{{$this->advance . '%'}}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
+                        </div>
                     </div>
-                </div>
+                    <span class="bg-red-200"> Tarea pendiente de entregar</span>
+                @endif
+
+                <ul>
+                    @foreach($course->sections as $section)
+                        <li class="text-gray-600 mb-4">
+                            <a class="font-bold text-base inline-block mb-2 "> {{$section->name}}</a>
+                            <ul>
+                                @foreach($section->lessons as $lesson)
+                                    <li class="flex">
+                                        <div>
+                                            @if($lesson->completed)
+                                               @if($current->id == $lesson->id)
+                                                    <span class="inline-block w-4 h-4 border-2 border-yellow-300 rounded-full mr-2 mt-1"></span>
+                                                @else
+                                                    <span class="inline-block w-4 h-4 bg-yellow-300 rounded-full mr-2 mt-1"></span>
+                                                @endif
+                                            @else
+                                                @if($current->id == $lesson->id)
+                                                    <span class="inline-block w-4 h-4 border-2 border-gray-500 rounded-full mr-2 mt-1"></span>
+                                                @else
+                                                    <span class="inline-block w-4 h-4 bg-gray-500 rounded-full mr-2 mt-1"></span>
+                                                @endif
+    
+                                            @endif
+                                        </div>
+                                        <a class="cursor-pointer" wire:click="changeLesson({{$lesson}})">{{$lesson->name}}
+                                            <!--accedemos al atributo completed definido en el modelo lesson getCompletedAtributed-->
+    
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endforeach
+                </ul>
+
             </div>
 
-            <div>
+            {{-- <div>
                 @livewire('lesson-assignament',['lesson' => $current], key($current->id))
-            </div>
+            </div> --}}
+
+            
         </div>
     </div>
 

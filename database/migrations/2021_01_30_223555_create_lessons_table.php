@@ -19,7 +19,10 @@ class CreateLessonsTable extends Migration
             $table->text('description')->nullable();
             $table->string('url');
             $table->string('iframe');
-            $table->foreignId('course_id')->references('id')->on('courses')->cascadeOnDelete();
+            $table->unsignedBigInteger('section_id');
+
+            //$table->foreignId('course_id')->references('id')->on('courses')->cascadeOnDelete();
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@ use App\Models\Goal;
 use App\Models\User;
 use App\Models\Image;
 use App\Models\Level;
-use App\Models\Lesson;
+use App\Models\Section;
 use App\Models\Review;
 use App\Models\Comment;
 use App\Models\Category;
@@ -93,9 +93,17 @@ class Course extends Model
         return $this->hasMany(Goal::class);
     }
 
-    public function lessons()
+    public function sections(){
+        return $this->hasMany(Section::class);
+    }
+
+    /*public function lessons()
     {
         return $this->hasMany(Lesson::class);
+    }*/
+
+    public function lessons(){
+        return $this->hasManyThrough(Lesson::class,Section::class);
     }
 
     public function comments()

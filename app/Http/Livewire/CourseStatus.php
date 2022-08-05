@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Course;
 use App\Models\Lesson;
 use Livewire\Component;
+use Auth;
 
 class CourseStatus extends Component
 {
