@@ -17,11 +17,11 @@
 
             <div class="flex items-center mt-4 cursor-pointer" wire:click="completed">
                 @if($current->completed)
-                    <i class="fas fa-toggle-on text-2xl text-blue-600"></i>
+                    <i class="text-md text-2xl font-bold fas fa-toggle-on text-2x1 text-blue-800"></i>
                 @else
-                    <i class="fas fa-toggle-off text-2xl text-gray-900"></i>
+                    <i class="text-md text-2xl font-bold fas fa-toggle-off text-2x1 text-gray-900"></i>
                 @endif
-                <p class="text-sm ml-2 text-gray-200 font-bold">Marcar esta unidad como culminada</p>
+                <p class="text-md font-bold ml-2 text-gray-200">Marcar esta unidad como culminada</p>
             </div>
 
             <div class="card mt-2">
@@ -65,7 +65,7 @@
                                 <div style="width:{{$this->advance . '%'}}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
                             </div>
                         </div>
-                        <span class="bg-yellow-200"> Tarea pendiente de calificar</span>
+                        <span class="bg-yellow-200 mb-4 text-xs flex"> Tarea pendiente de calificar</span>
                     @else
                         <p class="text-gray-600 text-sm mt-2">100% completado</p>
                         <div class="relative pt-1">
@@ -73,7 +73,7 @@
                                 <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
                             </div>
                         </div>
-                        <span class="bg-green-200"> Tarea Calificada</span>
+                        <span class="bg-green-200 mb-4 text-xs flex"> Tarea Calificada</span>
                     @endif
                 @else
                     <p class="text-gray-600 text-sm mt-2">{{$this->advance . '%'}} completado</p>
@@ -82,10 +82,12 @@
                             <div style="width:{{$this->advance . '%'}}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"></div>
                         </div>
                     </div>
-                    <span class="bg-red-200"> Tarea pendiente de entregar</span>
+                    <span class="bg-red-200 mb-4 text-xs flex"> Tarea pendiente de entregar</span>
                 @endif
 
-                <ul>
+                <hr>
+
+                <ul class="mt-4">
                     @foreach($course->sections as $section)
                         <li class="text-gray-600 mb-4">
                             <a class="font-bold text-base inline-block mb-2 "> {{$section->name}}</a>
@@ -95,15 +97,15 @@
                                         <div>
                                             @if($lesson->completed)
                                                @if($current->id == $lesson->id)
-                                                    <span class="inline-block w-4 h-4 border-2 border-yellow-300 rounded-full mr-2 mt-1"></span>
+                                                    <span class="inline-block w-4 h-4 border-2 border-green-500 rounded-full mr-2 mt-1"></span>
                                                 @else
-                                                    <span class="inline-block w-4 h-4 bg-yellow-300 rounded-full mr-2 mt-1"></span>
+                                                    <span class="inline-block w-4 h-4 bg-green-500 rounded-full mr-2 mt-1"></span>
                                                 @endif
                                             @else
                                                 @if($current->id == $lesson->id)
-                                                    <span class="inline-block w-4 h-4 border-2 border-gray-500 rounded-full mr-2 mt-1"></span>
+                                                    <span class="inline-block w-4 h-4 border-2 border-yellow-500 rounded-full mr-2 mt-1"></span>
                                                 @else
-                                                    <span class="inline-block w-4 h-4 bg-gray-500 rounded-full mr-2 mt-1"></span>
+                                                    <span class="inline-block w-4 h-4 bg-yellow-500 rounded-full mr-2 mt-1"></span>
                                                 @endif
     
                                             @endif

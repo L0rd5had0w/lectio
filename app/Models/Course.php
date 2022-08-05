@@ -97,11 +97,6 @@ class Course extends Model
         return $this->hasMany(Section::class);
     }
 
-    /*public function lessons()
-    {
-        return $this->hasMany(Lesson::class);
-    }*/
-
     public function lessons(){
         return $this->hasManyThrough(Lesson::class,Section::class);
     }

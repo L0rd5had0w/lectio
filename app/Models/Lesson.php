@@ -17,6 +17,11 @@ class Lesson extends Model
     protected $guarded = ['id'];
     protected $withCount = ['tasks'];
 
+    //Definimos un atributo para saber si se completo la leccion o no
+    public function getCompletedAttribute(){
+        return $this->users->contains(auth()->user()->id);
+    }
+
     public function tasks()
     {
         return $this->hasMany(Task::class);
@@ -31,9 +36,14 @@ class Lesson extends Model
         return $this->belongsTo(Section::class);
     }
 
-    public function user()
+    /*public function user()
     {
         return $this->belongsTo(User::class);
+    }*/
+
+    //Relacion muchos a muchos
+    public function users(){
+        return $this->belongsToMany(User::class);
     }
 
     public function comments()
