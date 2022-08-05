@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mt-2">
     @if (!$task)
     <form wire:submit.prevent='save'>
         <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg">

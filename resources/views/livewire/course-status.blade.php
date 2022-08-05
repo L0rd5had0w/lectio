@@ -37,10 +37,16 @@
 
                 </div>
             </div>
+
+            <div>
+                @livewire('lesson-assignament',['lesson' => $current], key($current->id))
+            </div>
+
         </div>
+
         <div class="card">
             <div class="card-body">
-                <h1 class="text-2xl leading-8 text-center mb-4 mt-20">{{$course->name}}</h1>
+                <h1 class="text-2xl leading-8 text-center mb-4 mt-2">{{$course->name}}</h1>
                 <div class="flex items-center">
                     <figure>
                         <img class="w-12 h-12 object-cover rounded-full mr-4" src="{{$course->teacher->profile_photo_url}}" alt="">
@@ -123,7 +129,7 @@
         </div>
     </div>
 
-    <section class="container p-5 place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {{-- <section class="container p-5 place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         @foreach ($lessons as $key=>$item)
         <div class="bg-gray-900 shadow-lg rounded p-3 h-full w-full my-4">
             <div class="group relative">
@@ -144,7 +150,7 @@
             <div class="p-5 mt-auto">
                 <h3 class="text-white text-lg ">Lección:{{$key+1}}: {{$item->name}}</h3>
                 <p class="text-gray-400">{{$item->description}}</p>
-                {{-- {{$tasks}} --}}
+
                 @foreach ($tasks as $e)
                 @if ($e->lesson->id == $item->id && $e->user->id == auth()->user()->id)
                 @if ($e->status == 1)
@@ -157,6 +163,6 @@
             </div>
         </div>
         @endforeach
-    </section>
+    </section> --}}
 
 </div>
