@@ -14,6 +14,16 @@ $nav_links =[
 'name' => 'Competencias',
 'route' => route('competences.index'),
 'active' => request()->routeIs('competence*')
+],
+[
+'name' => 'Blog',
+'route' => route('competences.index'),
+'active' => request()->routeIs('competence*')
+],
+[
+'name' => 'Servicios',
+'route' => route('competences.index'),
+'active' => request()->routeIs('competence*')
 ]
 ];
 @endphp
