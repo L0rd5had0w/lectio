@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CouponSeeder::class);
         $this->call(SubcategorySeeder::class);
         $this->call(CriterionSeeder::class);
+        $this->call(PlatformSeeder::class);
         $this->call(CourseSeeder::class);
         $this->call(CompetenceSeeder::class);
     }

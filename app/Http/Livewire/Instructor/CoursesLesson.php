@@ -2,24 +2,27 @@
 
 namespace App\Http\Livewire\Instructor;
 
-use App\Models\Course;
+use App\Models\Section;
+use App\Models\Platform;
 use App\Models\Lesson;
 use Livewire\Component;
 
 class CoursesLesson extends Component
 {
-    public $course, $lesson, $name, $url, $description;
+    public $section, $lesson, $platforms, $name, $platform_id = 1, $url;
 
     protected $rules = [
         'lesson.name' => 'required',
-        'lesson.description' => 'required',
-        'lesson.url' => ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/']
+        'lesson.platform_id' => 'required',
+        'lesson.url' => ['required', 'regex:%^ (?:https?://)? (?:www\.)? (?: youtu\.be/ | youtube\.com (?: /embed/ | /v/ | /watch\?v= ) ) ([\w-]{10,12}) $%x'],
     ];
 
-    public function mount(Course $course)
-    {
-        $this->course = $course;
+    public function mount(Section $section) {
+        $this->section = $section;
+
         $this->lesson = new Lesson();
+
+        $this->platforms = Platform::all();
     }
 
     public function render()
@@ -27,49 +30,56 @@ class CoursesLesson extends Component
         return view('livewire.instructor.courses-lesson');
     }
 
-    public function store()
-    {
+    public function store() {
         $rules = [
             'name' => 'required',
-            'description' => 'required',
-            'url' => ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/']
+            'platform_id' => 'required',
+            'url' => ['required', 'regex:%^ (?:https?://)? (?:www\.)? (?: youtu\.be/ | youtube\.com (?: /embed/ | /v/ | /watch\?v= ) ) ([\w-]{10,12}) $%x'],
         ];
+
+        if ($this->platform_id == 2) {
+            $rules['url'] = ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/'];
+        }
 
         $this->validate($rules);
 
         Lesson::create([
             'name' => $this->name,
+            'platform_id' => $this->platform_id,
             'url' => $this->url,
-            'description' => $this->description,
-            'course_id' => $this->course->id
+            'section_id' => $this->section->id,
         ]);
 
-        $this->reset(['name', 'url', 'description']);
-        $this->course = Course::find($this->course->id);
+        $this->reset('name', 'platform_id', 'url');
+        $this->section = Section::find($this->section->id);
     }
 
-    public function edit(Lesson $lesson)
-    {
+    public function edit(Lesson $lesson) {
         $this->resetValidation();
         $this->lesson = $lesson;
     }
 
-    public function update()
-    {
+    public function update() {
+        if ($this->lesson->platform_id == 2) {
+            $this->rules['lesson.url'] = ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/'];
+        }
+
         $this->validate();
+
         $this->lesson->save();
         $this->lesson = new Lesson();
-        $this->course = Course::find($this->course->id);
+
+        $this->section = Section::find($this->section->id);
     }
 
-    public function cancel()
-    {
+    public function cancel() {
         $this->lesson = new Lesson();
+        $this->resetValidation();
+        $this->reset('name', 'platform_id', 'url');
     }
 
-    public function destroy(Lesson $lesson)
-    {
+    public function destroy(Lesson $lesson) {
         $lesson->delete();
-        $this->course = Course::find($this->course->id);
+        $this->section = Section::find($this->section->id);
     }
 }
