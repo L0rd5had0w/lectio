@@ -56,7 +56,7 @@
                             <a href="{{route('instructor.courses.students', $course)}}">Estudiantes</a>
                         </li>
                     </ul>
-                    {{-- @switch($course->status)
+                    @switch($course->status)
                     @case(1)
                     <form action="{{route('instructor.courses.status',$course)}}" method="post">
                         @csrf
@@ -81,7 +81,7 @@
                     @break
                     @default
 
-                    @endswitch --}}
+                    @endswitch
                 </aside>
                 <div class="col-span-4 card">
                     <main class="card-body text-gray-500">

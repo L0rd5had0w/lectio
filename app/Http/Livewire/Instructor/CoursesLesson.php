@@ -60,6 +60,12 @@ class CoursesLesson extends Component
     }
 
     public function update() {
+        $rules = [
+            'name' => 'required',
+            'platform_id' => 'required',
+            'url' => ['required', 'regex:%^ (?:https?://)? (?:www\.)? (?: youtu\.be/ | youtube\.com (?: /embed/ | /v/ | /watch\?v= ) ) ([\w-]{10,12}) $%x'],
+        ];
+        
         if ($this->lesson->platform_id == 2) {
             $this->rules['lesson.url'] = ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/'];
         }

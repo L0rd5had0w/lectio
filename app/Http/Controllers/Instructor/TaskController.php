@@ -13,7 +13,7 @@ class TaskController extends Controller
 {
     public function show(Task $task)
     {
-        $course = Course::find($task->lesson->course->id);
+        $course = Course::find($task->lesson->section->course->id);
         $this->authorize('dicatated', $course);
         return view('instructor.tasks.show', compact('course', 'task'));
     }
