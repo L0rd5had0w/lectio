@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <section class="bg-gray-700 py-12">
+    <section class="mt-24 bg-gray-700 py-12">
         <div class="container grid grid-cols-1 lg:grid-cols-2 gap-6">
             <figure>
                 @if ($course->image)
