@@ -33,6 +33,10 @@ class Lesson extends Model
         return $this->belongsTo(Course::class);
     }
 
+    public function resource(){
+        return $this->morphOne('App\Models\Resource', 'resourceable');
+    }
+
     public function description(){
         return $this->hasOne('App\Models\Description');
     }

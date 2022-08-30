@@ -56,7 +56,6 @@
                 </header>
                 <div class="py-2 px-3 border-t border-gray-100" x-show="open">
                     <ul>
-                        {{-- <li><b>Plataforma:</b> {{ $item->platform->name }}</li> --}}
                         <li><b>Enlace:</b> <a href="{{ $item->url }}" class="text-gray-400 underline" target="_blank">{{ $item->url }}</a></li>
                     </ul>
                     <div class="my-2">
@@ -67,9 +66,9 @@
                     <div class="mb-3">
                         @livewire('instructor.lesson-description', ['lesson' => $item], key('lesson-description' . $item->id))
                     </div>
-                    {{-- <div class="mb-3">
-                        @livewire('instructor.lesson-resource', ['lesson' => $item], key('lesson-resource' . $item->id))
-                    </div> --}}
+                    <div class="mb-3">
+                        @livewire('instructor.lesson-resources', ['lesson' => $item], key('lesson-resource' . $item->id))
+                    </div>
                 </div>
             @endif
 
