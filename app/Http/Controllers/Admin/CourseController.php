@@ -39,7 +39,7 @@ class CourseController extends Controller
         if (!$course->lessons || !$course->goals || !$course->requirements || !$course->image) {
             return back()->with('info', "Curso incompleto");
         }
-        $course->status = 2;
+        $course->status = 3;
         $course->save();
 
         //Enviar correo electronico.
