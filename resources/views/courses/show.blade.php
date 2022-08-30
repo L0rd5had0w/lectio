@@ -9,7 +9,7 @@
             class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-gray-700 rounded-b lg:rounded-b-none lg:rounded-r p-2 flex flex-col justify-between leading-normal w-full text-white">
             <div class="mb-8">
                 <h1 class="text-4xl">{{$course->name}}</h1>
-                <h2 class="text-xl mb-3">{{$course->description}}</h2>
+                <h2 class="text-xl mb-3">{!! $course->description !!}</h2>
                 <p class="ml-5 mb-3">Nivel: {{$course->level->name}}</p>
                 <p class="ml-5 mb-3">Categoria: {{$course->category->name}}</p>
                 <p class="ml-5 text-white mb-3">Matriculados:
@@ -97,7 +97,7 @@
                 <section class="mb-8">
                     <h1 class="font-bold text-3xl">Descripcion</h1>
                     <div class="text-gray-700 text-base">
-                        {{$course->description}}
+                        {!! $course->description !!}
                     </div>
                 </section>
 

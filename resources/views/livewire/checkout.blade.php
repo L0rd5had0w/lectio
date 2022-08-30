@@ -24,7 +24,7 @@
                         </td>
                         <td class="text-right">
                             <span class="text-sm lg:text-base font-medium">
-                                {{$course->description}}
+                                {!! $course->description !!}
                             </span>
                         </td>
                     </tr>
