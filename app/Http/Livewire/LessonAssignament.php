@@ -41,7 +41,7 @@ class LessonAssignament extends Component
         ]);
 
         $mail = new Assignament($this->lesson, $this->user);
-        Mail::to($this->lesson->course->teacher->email)->queue($mail);
+        Mail::to($this->lesson->sections->course->teacher->email)->queue($mail);
 
         $this->lesson = Lesson::find($this->lesson->id);
         $this->task = Task::whereUserId($this->user->id)->first();
