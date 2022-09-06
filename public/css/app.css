@@ -32715,6 +32715,22 @@ select {
   width: 100%;
 }
 
+.my-danger-button {
+  --tw-bg-opacity: 1;
+  background-color: rgba(225, 34, 34, var(--tw-bg-opacity));
+  display: block;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  width: 100%;
+}
+
 @media (min-width: 640px) {
   .container {
     padding-left: 1.5rem;

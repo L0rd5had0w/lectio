@@ -11,6 +11,7 @@ use App\Models\Review;
 use App\Models\Comment;
 use App\Models\Category;
 use App\Models\Requirement;
+use App\Models\Observation;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -56,6 +57,10 @@ class Course extends Model
     public function getRouteKeyName()
     {
         return "slug";
+    }
+
+    public function observation() {
+        return $this->hasOne(Observation::class);
     }
 
     public function reviews()

@@ -100,6 +100,8 @@
                         @csrf
                         <button type="submit" class="my-button">Aprobar</button>
                     </form>
+
+                    <a href="{{route('admin.courses.observation', $course)}}" class="my-danger-button">Observar Curso</a>
                 </div>
             </section>
 
