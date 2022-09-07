@@ -49,6 +49,7 @@ class CoursePolicy
         }
         return true;
     }
+    
     public function revision(User $user, Course $course)
     {
         if ($course->status == 2) {

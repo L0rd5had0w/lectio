@@ -42,6 +42,10 @@
                 @livewire('lesson-assignament',['lesson' => $current], key($current->id))
             </div>
 
+            <div>
+                @livewire('courses-reviews', ['course' => $course])
+            </div>
+
             <div class="mt-4 text-2xl text-gray-300 font-bold">
                 Otras lecciones de esta unidad
             </div>
