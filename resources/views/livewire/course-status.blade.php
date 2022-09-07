@@ -14,14 +14,23 @@
                     {{$current->description}}
                 </div>
             @endif
+            
+            <div class="flex justify-between mt-4">
+                <div class="flex items-center cursor-pointer" wire:click="completed">
+                    @if($current->completed)
+                        <i class="text-md text-2xl font-bold fas fa-toggle-on text-2x1 text-blue-800"></i>
+                    @else
+                        <i class="text-md text-2xl font-bold fas fa-toggle-off text-2x1 text-gray-900"></i>
+                    @endif
+                    <p class="text-md font-bold ml-2 text-gray-200">Marcar esta lección como culminada</p>
+                </div>
 
-            <div class="flex items-center mt-4 cursor-pointer" wire:click="completed">
-                @if($current->completed)
-                    <i class="text-md text-2xl font-bold fas fa-toggle-on text-2x1 text-blue-800"></i>
-                @else
-                    <i class="text-md text-2xl font-bold fas fa-toggle-off text-2x1 text-gray-900"></i>
+                @if($current->resource)
+                    <div class="flex items-center text-gray-100 cursor-pointer" wire:click="downloadResource">
+                        <i class="fas fa-download text-lg"></i>
+                        <p class="text-sm ml-2">Descarga recurso</p>
+                    </div>
                 @endif
-                <p class="text-md font-bold ml-2 text-gray-200">Marcar esta lección como culminada</p>
             </div>
 
             <div class="card mt-2">

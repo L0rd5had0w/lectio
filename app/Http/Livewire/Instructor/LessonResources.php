@@ -38,13 +38,9 @@ class LessonResources extends Component
         $this->lesson = Lesson::find($this->lesson->id);
     }
 
-
-
     public function downloadResource(){
         return response()->download( storage_path('app/' . $this->lesson->resource->url) );
-    }
-
-    
+    }   
 
     public function destroy(){
         Storage::delete($this->lesson->resource->url);
@@ -54,5 +50,4 @@ class LessonResources extends Component
         $this->lesson = Lesson::find($this->lesson->id);
 
     }
-
 }
