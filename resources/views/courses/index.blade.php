@@ -13,9 +13,7 @@
                             Pagina de cursos.
                         </h1>
                         <p class="mt-4 text-lg text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum in
-                            dolore quaerat dolorem unde at id. Fugit amet numquam deserunt quod ea quisquam aliquam vero
-                            perspiciatis magni, ipsum accusamus totam!
+                            ¡Bienvenido a los cursos de Lectio! Descubre, aprende y crece con nosotros. Tu viaje educativo comienza aquí.
                         </p>
 
                         @livewire('search')

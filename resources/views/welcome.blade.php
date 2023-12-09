@@ -9,8 +9,8 @@
             <div class="items-center flex flex-wrap">
                 <<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
                     <div class="w-full md:w-3/4 lg:w-1/2">
-                        <h1 class="text-white font-bold text-4xl">Academia Web, Tu mejor Aliado en Capacitación</h1>
-                        <p class="text-white text-lg mt-2 mb-4">Capacitate en diferentes cursos de diseño web, desarrollo de videojuegos, diseño multimedia, diseño gráfico y logra avanzar en tu vida profesional</p>
+                        <h1 class="text-white font-bold text-4xl">Academia Web: Tu mejor aliado para potenciar tus habilidades.</h1>
+                        <p class="text-white text-lg mt-2 mb-4">Amplía tus habilidades con una variedad de cursos que abarcan diseño web, desarrollo de videojuegos, diseño multimedia y diseño gráfico. Avanza hacia tu crecimiento profesional con paso firme.</p>
 
                         @livewire('search');
                     </div>
@@ -39,8 +39,7 @@
                             </div>
                             <h6 class="text-xl font-semibold">Cursos</h6>
                             <p class="mt-2 mb-4 text-gray-600">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque harum autem voluptas
-                                facilis commodi, debitis quia nemo praesentium dignissimos nisi accusamus tempore?
+                                Los cursos en línea son flexibles y accesibles desde cualquier lugar, adaptándose a tu horario y estilo de vida. Ofrecen una amplia variedad de temas y acceso a expertos, brindándote la oportunidad de mejorar tus habilidades en un mundo competitivo. Además, promueven la autodisciplina y organización, habilidades esenciales en el trabajo actual.
                             </p>
                         </div>
                     </div>
@@ -54,8 +53,7 @@
                             </div>
                             <h6 class="text-xl font-semibold">Certificaciones</h6>
                             <p class="mt-2 mb-4 text-gray-600">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum asperiores, corporis id
-                                consequuntur dicta alias repellendus accusamus laboriosam cupiditate iure.
+                                Las certificaciones son clave en informática y otros sectores, validando tus habilidades y compromiso con el aprendizaje. Reconocidas por empleadores, amplían oportunidades laborales y demuestran tu dominio en áreas específicas, generando confianza en clientes y empleadores. Son una inversión en tu futuro, garantizando reconocimiento y acceso a roles más especializados.
                             </p>
                         </div>
                     </div>
@@ -69,9 +67,7 @@
                             </div>
                             <h6 class="text-xl font-semibold">Diplomados</h6>
                             <p class="mt-2 mb-4 text-gray-600">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita magni adipisci
-                                temporibus dolore rerum incidunt molestias iusto in quae dolores doloribus repudiandae
-                                dignissimos.
+                                Los diplomados ofrecen una formación especializada y actualizada en informática y otros sectores. Permiten profundizar en áreas clave como desarrollo de software, ciberseguridad o análisis de datos. Son accesibles y están diseñados con expertos del campo, preparándote para desafíos laborales reales. Una oportunidad para adquirir habilidades específicas y destacarse en el mercado laboral actual.
                             </p>
                         </div>
                     </div>
@@ -87,9 +83,7 @@
                         Visita nuestros ultimos cursos
                     </h3>
                     <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, explicabo reiciendis quidem
-                        sapiente recusandae dolores? Voluptates voluptate ipsum temporibus recusandae veniam dicta cum,
-                        ab perferendis facilis praesentium ipsam aliquam quidem.
+                        ¡Descubre nuestras últimas oportunidades formativas! Explora nuestros cursos más recientes y actualiza tus habilidades con lo último en conocimiento y práctica. Aprovecha la oportunidad de sumergirte en temáticas innovadoras y relevantes para potenciar tu crecimiento profesional. ¡Únete a nosotros y sé parte del aprendizaje continuo que marca la diferencia en tu trayectoria!
                     </p>
                     <a href="{{route('courses.index')}}" class="font-bold text-gray-800 mt-8">Ir a cursos!</a>
                 </div>
@@ -103,12 +97,10 @@
                                 <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current"></polygon>
                             </svg>
                             <h4 class="text-xl font-bold text-white">
-                                Curso
+                                Lectio
                             </h4>
                             <p class="text-md font-light mt-2 text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt explicabo voluptatibus
-                                repellendus officiis, porro hic labore placeat dignissimos doloribus necessitatibus
-                                minima dicta nulla totam voluptatem veritatis cupiditate fugit laborum saepe!
+                                Lectio es una plataforma diseñada para llevar tu aprendizaje a un nuevo nivel. Ofrecemos un espacio digital donde la curiosidad se encuentra con el conocimiento, brindándote acceso a una amplia gama de cursos, herramientas interactivas y recursos educativos de calidad. Nuestra misión es proporcionarte una experiencia educativa enriquecedora y adaptable a tus necesidades, permitiéndote explorar temas diversos, aprender a tu propio ritmo y potenciar tus habilidades en áreas que te apasionan. Únete a Lectio y descubre un mundo de aprendizaje personalizado y transformador.
                             </p>
                         </blockquote>
                     </div>
@@ -133,9 +125,7 @@
                 <div class="w-full lg:w-6/12 px-4">
                     <h2 class="text-4xl font-semibold">Equipo</h2>
                     <p class="text-lg leading-relaxed m-4 text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptatem tempore reprehenderit
-                        repudiandae a, ipsa at maiores minus sequi in porro expedita esse? Hic commodi, nulla quos in
-                        nihil molestias.
+                        ¡Conoce a nuestro equipo en Lectio, un grupo apasionado y comprometido con la excelencia educativa! Desde nuestros instructores expertos hasta nuestro equipo de soporte dedicado, cada miembro está enfocado en brindarte la mejor experiencia de aprendizaje. Nuestros profesionales en tecnología educativa se esfuerzan por ofrecerte contenido de calidad, mientras que nuestro equipo administrativo trabaja incansablemente para garantizar tu satisfacción y éxito en cada curso. ¡Únete a nosotros y descubre el compromiso y la dedicación que define a nuestro equipo en Lectio!
                     </p>
                 </div>
             </div>
@@ -145,7 +135,7 @@
                         <img alt="..." src="{{ asset('img/team1.png') }}"
                             class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px" />
                         <div class="pt-6 text-center">
-                            <h5 class="text-xl font-bold">Ryan Tompson</h5>
+                            <h5 class="text-xl font-bold">Victor Blanco</h5>
                             <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
                                 Diseñádor
                             </p>
@@ -170,9 +160,9 @@
                         <img alt="..." src="{{ asset('img/team1.png') }}"
                             class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px" />
                         <div class="pt-6 text-center">
-                            <h5 class="text-xl font-bold">Romina Hadid</h5>
+                            <h5 class="text-xl font-bold">Victor Blanco</h5>
                             <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                Uñas
+                                Arquitecto
                             </p>
                             <div class="mt-6">
                                 <button
@@ -192,9 +182,9 @@
                         <img alt="..." src="{{ asset('img/team1.png') }}"
                             class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px" />
                         <div class="pt-6 text-center">
-                            <h5 class="text-xl font-bold">Alexa Smith</h5>
+                            <h5 class="text-xl font-bold">Victor Blanco</h5>
                             <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                Uñas </p>
+                                Progrador </p>
                             <div class="mt-6">
                                 <button
                                     class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
@@ -216,9 +206,9 @@
                         <img alt="..." src="{{ asset('img/team1.png') }}"
                             class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px" />
                         <div class="pt-6 text-center">
-                            <h5 class="text-xl font-bold">Jenna Kardi</h5>
+                            <h5 class="text-xl font-bold">Victor Blanco</h5>
                             <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                uñas </p>
+                                CTO </p>
                             <div class="mt-6">
                                 <button
                                     class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
@@ -255,9 +245,7 @@
                 <div class="w-full lg:w-6/12 px-4">
                     <h2 class="text-4xl font-semibold text-white">Cursos</h2>
                     <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eveniet ratione, error omnis,
-                        ipsum explicabo earum deleniti officia nostrum sit laudantium eaque rem quia repudiandae illum
-                        aperiam, ducimus rerum ipsa!
+                        Los cursos en línea son flexibles y accesibles desde cualquier lugar, adaptándose a tu horario y estilo de vida. Ofrecen una amplia variedad de temas y acceso a expertos, brindándote la oportunidad de mejorar tus habilidades en un mundo competitivo. Además, promueven la autodisciplina y organización, habilidades esenciales en el trabajo actual.
                     </p>
                 </div>
             </div>
