@@ -29,6 +29,7 @@ class PaymentController extends Controller
             )
         );
     }
+
     public function checkoutCourse(Course $course)
     {
         if ($course->students->contains(auth()->user()->id)) {
@@ -55,7 +56,7 @@ class PaymentController extends Controller
 
         $amount = new Amount();
         $amount->setTotal($request->finalprice);
-        $amount->setCurrency('MXN');
+        $amount->setCurrency('USD');
 
         $transaction = new Transaction();
         $transaction->setAmount($amount);
